@@ -32,7 +32,10 @@ public class CardTrick {
         Card userCard = new Card();
         userCard.setValue(userValue);
         userCard.setSuit(Card.SUITS[userSuit]);
-
+    
+         Card luckyCard = new Card();
+        luckyCard.setValue(7);  
+        luckyCard.setSuit(Card.SUITS[2])
         boolean found = false;
 
         for (Card card : hand) {
@@ -46,6 +49,11 @@ public class CardTrick {
             System.out.println("Your card is in the magic hand!");
         } else {
             System.out.println("Your card is not in the magic hand.");
+        }
+        if (luckyCard.equals(userCard)) {
+            System.out.println("Congratulations! You found the lucky card!");
+        } else {
+            System.out.println("The lucky card is not your card. Better luck next time!");
         }
     }
 }
