@@ -1,67 +1,32 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ca.sheridancollege.week3.softwarefundamentals.ice1;
-
-import java.util.Random;
-import java.util.Scanner;
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects
  * and then asks the user to pick a card and searches the array of cards
- * for the match to the user's card. To be used as starting code in ICE 1 WEEK 3
- * 
- * @author RajPatel 
- * user id:(paterajm) 
- * student id:991655672
+ * for the match to the user's card. To be used as starting code in ICE 1
+ * @author dancye
  */
-
 public class CardTrick {
-
-    public static void main(String[] args) {
+   
+    public static void main(String[] args)
+    {
         Card[] magicHand = new Card[7];
-
-        for (int i = 0; i < magicHand.length; i++) {
-            Card c = new Card();
-            Random generateRandom = new Random();
-            c.setValue(generateRandom.nextInt(13) + 1);
-            c.setSuit(Card.SUITS[generateRandom.nextInt(4)]);
-            magicHand[i] = c;
-        }
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the value of your card (1-13):");
-        int userValue = sc.nextInt();
-        System.out.println("Enter the suit of your card (0-3):");
-        int userSuit = sc.nextInt();
-
-        Card userCard = new Card();
-        userCard.setValue(userValue);
-        userCard.setSuit(Card.SUITS[userSuit]);
-
-        boolean found = false;
-
-        for (Card card : magicHand) {
-            if (card.equals(userCard)) {
-                found = true;
-                break;
-            }
-        }
-
-        if (found) {
-            System.out.println("Your card is in the magic hand!");
-        } else {
-            System.out.println("Your card is not in the magic hand.");
-
-        }
-         Card luckyCard = new Card();
-        luckyCard.setValue(7);  
-        luckyCard.setSuit(Card.SUITS[2]);
-
-        
        
-        
-        if (luckyCard.equals(userCard)) {
-            System.out.println("Congratulations! You found the lucky card!");
-        } else {
-            System.out.println("The lucky card is not your card. Better luck next time!");
+        for (int i=0; i<magicHand.length; i++)
+        {
+            Card c = new Card();
+            //c.setValue(insert call to random number generator here)
+            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
         }
+       
+        //insert code to ask the user for Card value and suit, create their card
+        // and search magicHand here
+        //Then report the result here
     }
-  }
+   
+}
