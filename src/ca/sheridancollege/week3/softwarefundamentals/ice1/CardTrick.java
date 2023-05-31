@@ -5,11 +5,13 @@
  */
 
 /*
-* Name - Aayush Shah
-* Student Id - #991703841
+* Name - Kiranvir Kaur
+* Student Id - 991687665
+* Date modified - 31 May 2023
 
 */
 package ca.sheridancollege.week3.softwarefundamentals.ice1;
+import java.util.Scanner;
 
 /**
  * A class that fills a magic hand of 7 cards with random Card Objects
@@ -22,17 +24,52 @@ public class CardTrick {
     public static void main(String[] args)
     {
         Card[] magicHand = new Card[7];
+        String[] suits = {"Hearts","Diamonds","Clubs","Spades"};
        
-        for (int i=0; i<magicHand.length; i++)
+        for (int i=0; i < magicHand.length; i++)
         {
             Card c = new Card();
-            //c.setValue(insert call to random number generator here)
-            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            
+            int randomValue = (int)(Math.random()*13);
+            String randomSuit = suits[(int)(Math.random()*4)];
+   
+            c.setValue(randomValue);
+            c.setSuit(randomSuit);
+            
+            magicHand[i] = c;
         }
-       
-        //insert code to ask the user for Card value and suit, create their card
+        
+        
+        // ask the user for Card value and suit
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your card value (0-12)");
+        int userValue = sc.nextInt();
+        System.out.println("Enter your card suit (Hearts,Diamonds,Clubs,Spades):");
+        String userSuit = sc.next();
+        
+        Card userCard = new Card();
+        userCard.setValue(userValue);
+        userCard.setSuit(userSuit);
+        
         // and search magicHand here
+        boolean found = false;
+        
+        for (Card magicHand1 : magicHand) {
+            if (magicHand1.equals(userCard)) {
+                found = true;
+                break;
+            }
+        }
+        
         //Then report the result here
+        if(found)
+        {
+            System.out.println("Your card is in the magic hand!");
+        }
+        else
+        {
+            System.out.println("Sorry,your card is not in the magic card");
+        }
     }
    
 }
