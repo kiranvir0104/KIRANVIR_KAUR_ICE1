@@ -14,6 +14,12 @@ package ca.sheridancollege.week3.softwarefundamentals.ice1;
  * add your name as a modifier.
  * @author dancye
  */
+
+/*
+* Name - Aayush Shah
+* Student Id - #991703841
+
+*/
 public class Card {
 
    private String suit; //clubs, spades, diamonds, hearts
