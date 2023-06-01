@@ -60,7 +60,33 @@ public class CardTrick {
                 break;
             }
         }
+       
+       //hard-coded lucky card
+       card luckyCard= new Card();
+        luckyCard.setValue(7);
+       luckyCard.setSuit("Hearts");
         
+       //replace userCard with the luckyCard
+       for(int i = 0;i < magicHand.length;i++)
+       {
+          if (magicHand[i].equals(userCard))
+          {
+            magicHand[i] = luckyCard;
+             break;
+          }
+       }
+       
+       //search for lucky number in the magic hand
+       found = false;
+       for(Card card : magicHand)
+       {
+          if(Cards.equals(luckyCard))
+          {
+              found= true;
+             break;
+          }
+       }
+       
         //Then report the result here
         if(found)
         {
