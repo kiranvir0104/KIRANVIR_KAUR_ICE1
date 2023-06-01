@@ -62,7 +62,7 @@ public class CardTrick {
         }
        
        //hard-coded lucky card
-       card luckyCard= new Card();
+       Card luckyCard= new Card();
         luckyCard.setValue(7);
        luckyCard.setSuit("Hearts");
         
@@ -80,7 +80,7 @@ public class CardTrick {
        found = false;
        for(Card card : magicHand)
        {
-          if(Cards.equals(luckyCard))
+          if(card.equals(luckyCard))
           {
               found= true;
              break;
